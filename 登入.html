@@ -1,0 +1,206 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>iMinutes - 登入</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/fancybox/jquery.fancybox.css" rel="stylesheet" />
+    <link href="css/flexslider.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="skins/default.css" rel="stylesheet" />
+    <link href="css/login2.css" rel="stylesheet" type="text/css" />
+
+
+</head>
+<body>
+    <div id="wrapper">
+        <!-- header start -->
+        <header>
+            <div class="navbar navbar-default navbar-static-top">
+                <div class="container">
+
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="首頁.html"><span>i</span>Minutes</a>
+                    </div>
+
+
+                    <!-- 右上功能列表 start -->
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <a href="首頁.html"><h4>首頁</h4></a>
+                            </li>
+
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="true"><h4>會議相關</h4></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="新增會議.html"><h4>新增會議</h4></a></li>
+                                    <li><a href="行事曆觀看.html"><h4>行程管理</h4></a></li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="組織列表.html"><h4>組織相關</h4></a>
+                            </li>
+
+                            <li>
+                                <a href="問題中心.html"><h4>Q&A</h4></a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                    <!-- 右上功能列表 end -->
+                </div>
+            </div>
+        </header>
+        <!-- header end -->
+        <!-- 所在位置 start -->
+        <section id="inner-headline">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <ul class="breadcrumb">
+                            <li><a href="index.html"><i class="fa fa-home"></i></a><i class="icon-angle-right"></i></li>
+                            <li class="active">登入</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 所在位置 end -->
+        <h1 align="center">WELCOME</h1>
+        <div class="login" align="center" style="margin-top:50px;">
+
+            <div class="header">
+                <div class="switch" id="switch" align="center">
+                    <a class="switch_btn_focus" id="switch_qlogin" href="javascript:void(0);" tabindex="7">登入</a>
+                    <a class="switch_btn" id="switch_login" href="javascript:void(0);" tabindex="8">註冊</a>
+                    <div class="switch_bottom" id="switch_bottom" style="position: fixed; width: 45px; left: 0px;">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="web_qr_login" id="web_qr_login" style="display: block; height: 235px;">
+
+                <!--登入欄位-->
+                <div class="web_login" id="web_login">
+                    <div class="login-box">
+                        <div class="login_form">
+
+                            <input type="hidden" name="did" value="0" />
+                            <input type="hidden" name="to" value="log" />
+                            <div class="uinArea" id="uinArea">
+                                <label class="input-tips" for="u">帳號：</label>
+                                <div class="inputOuter" id="uArea">
+                                    <input type="text" id="u" name="username" class="inputstyle" placeholder="test@yahoo.com" />
+                                </div>
+                            </div>
+                            <div class="pwdArea" id="pwdArea">
+                                <label class="input-tips" for="p">密碼：</label>
+                                <div class="inputOuter" id="pArea">
+                                    <input type="password" id="p" name="p" class="inputstyle" placeholder="*******" />
+                                </div>
+                            </div>
+
+                            <div style="padding-left:50px;margin-top:20px;">
+                                <input type="submit" value="登 入" style="width:150px;" class="button_blue" onclick="location.href='首頁.html'" />
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!--登入end-->
+            </div>
+
+            <!--註冊欄位頁面-->
+            <div class="qlogin" id="qlogin" style="display: none; ">
+
+                <div class="web_login">
+                    <form name="form2" id="regUser" accept-charset="utf-8" action="http://www.js-css.cn" method="post">
+                        <input type="hidden" name="to" value="reg" />
+                        <input type="hidden" name="did" value="0" />
+                        <ul class="reg_form" id="reg-ul">
+                            <div id="userCue" class="cue">用戶註冊</div>
+
+                            <li>
+                                <label for="user" class="input-tips2">帳號：</label>
+                                <div class="inputOuter2">
+                                    <input type="text" id="user" class="form-control" name="userID" maxlength="16" placeholder="請輸入帳號" />
+                                </div>
+                            </li>
+
+                            <li>
+                                <label for="username" class="input-tips2">姓名：</label>
+                                <div class="inputOuter2">
+                                    <input type="text" id="username" class="form-control" name="username" maxlength="20" placeholder="請輸入姓名" />
+                                </div>
+                            </li>
+
+                            <li>
+                                <label for="passwd" class="input-tips2">密碼：</label>
+                                <div class="inputOuter2">
+                                    <input type="password" class="form-control" id="passwd" name="passwd" placeholder="請輸入密碼" />
+                                </div>
+                            </li>
+
+                            <li>
+                                <label for="passwd2" class="input-tips2">確認密碼：</label>
+                                <div class="inputOuter2">
+                                    <input type="password" class="form-control" id="passwd2" name="passwd2" placeholder="請再次輸入密碼" />
+                                </div>
+                            </li>
+
+                            <li>
+                                <label for="e-mail" class="input-tips2">E-mail：</label>
+                                <div class="inputOuter2">
+                                    <input type="email" class="form-control" id="Email" placeholder="請輸入信箱" />
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="inputArea">
+                                    <input type="button" id="reg" style="margin-top:10px;margin-left:85px;" class="button_blue" value="同意規範並註冊" /> <a href="#" class="zcxy" target="_blank">註冊規範</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </form>
+
+
+                </div>
+
+
+            </div>
+            <!--註冊頁面end-->
+
+        </div>
+    </div>
+    <div class="jianyi">*推薦使用IE8或以上版本IE瀏覽器或CHROME瀏覽器訪問本站</div>
+    
+
+
+        <!--////////////////////////////////////////////////////////////-->
+        <script src="js/jquery.js"></script>
+        <script src="js/jquery.easing.1.3.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.fancybox.pack.js"></script>
+        <script src="js/jquery.fancybox-media.js"></script>
+        <script src="js/google-code-prettify/prettify.js"></script>
+        <script src="js/portfolio/jquery.quicksand.js"></script>
+        <script src="js/portfolio/setting.js"></script>
+        <script src="js/jquery.flexslider.js"></script>
+        <script src="js/animate.js"></script>
+        <script src="js/custom.js"></script>
+        <script src="js/validate.js"></script>
+        <script src="js/login/login.js"></script>
+
+
+</body>
+</html>

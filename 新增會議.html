@@ -1,0 +1,205 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>新增會議</title>
+	
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/fancybox/jquery.fancybox.css" rel="stylesheet" />
+    <link href="css/flexslider.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="skins/default.css" rel="stylesheet" />
+
+    
+
+</head>
+
+<body>
+    <div id="wrapper">
+        <!-- header start -->
+        <header>
+            <div class="navbar navbar-default navbar-static-top">
+                <div class="container">
+
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="首頁.html"><span>i</span>Minutes</a>
+                    </div>
+
+
+                    <!-- 右上功能列表 start -->
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <a href="首頁.html"><h4>首頁</h4></a>
+                            </li>
+
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="true"><h4>會議相關</h4></a>
+                                <ul class="dropdown-menu">
+                                    <li class="active"><a href="新增會議.html"><h4>新增會議</h4></a></li>
+                                    <li><a href="行事曆觀看.html"><h4>行程管理</h4></a></li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="組織列表.html"><h4>組織相關</h4></a>
+                            </li>
+
+                            <li>
+                                <a href="問題中心.html"><h4>Q&A</h4></a>
+                            </li>
+
+                        </ul>
+                        
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <a>welcome! Mark</a>
+                            </li>
+                            <li>
+                                <input type="image" src="img/avatar.png" class="img-circle" />
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- 右上功能列表 end -->
+                </div>
+            </div>
+        </header>
+        <!-- header end -->
+        <!-- 所在位置 start -->
+        <section id="inner-headline">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <ul class="breadcrumb">
+                            <li><a href="index.html"><i class="fa fa-home"></i></a><i class="icon-angle-right"></i></li>
+                            <li class="active">新增會議</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 所在位置 end -->
+        <!-- 新增會議列表 start -->
+        <section id="content" style="background-color:lightgrey">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h4>新增會議</h4>
+                        <form id="contactform" action="contact/contact.php" method="post" class="validateform" name="send-contact">
+                            <div id="sendmessage">
+                                資料已送出
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-lg-4 field">
+                                    <label class="h4" style="font-size:large">會議名稱 :</label>
+                                    <input type="text" name="meetingName" placeholder="ex: 每月例會" />
+                                </div>
+
+                                <div class="col-lg-4 field">
+                                    <label class="h4" style="font-size:large">會議地點 :</label>
+                                    <input type="text" name="meetingName" placeholder="ex: A棟-11F-會議室A" />
+                                </div>
+
+                                <div class="col-lg-4 field">
+                                    <label class="h4" style="font-size:large">會議編號 :(系統產生)</label>
+                                    <input type="text" name="meetingName" placeholder="ex: 2017-09-01001" readonly />
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-4 field">
+                                    <label class="h4" style="font-size:large">發起人員 :</label>
+                                    <input type="text" placeholder="ex: Mark" />
+                                    <select id="sel" class="btn btn-group-vertical">
+                                        <option value="1">ex: 發起人所屬組織</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-lg-4 field">
+                                    <label class="h4" style="font-size:large">紀錄人員 :</label>
+                                    <input type="text" placeholder="ex: JIN" />
+                                    <select id="sel" class="btn btn-group-vertical">
+                                        <option value="1">ex: 所屬組織成員</option>
+                                    </select>
+                                    
+                                </div>
+
+                                <div class="col-lg-4 field">
+                                    <label class="h4" style="font-size:large">與會人員 :</label>
+                                    <input type="text" placeholder="ex: RAY / MOLL / ARCK" />
+                                    <select id="sel" class="btn btn-group-vertical">
+                                        <option value="1">ex: 所屬組織成員</option>
+                                    </select>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <label class="h4" style="font-size:large">會議預計開始時間 :</label>
+                                    <input type="text" placeholder="2017-09-01 13:30AM" />
+                                    <input type="datetime-local">
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <label class="h4" style="font-size:large">會議預計結束時間 :</label>
+                                    <input type="text" placeholder="2017-09-01 16:00AM" />
+                                    <input type="datetime-local">
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <label class="h4" style="font-size:large">會議備註 :</label>
+                                </div>
+                                <div class="col-lg-12 margintop10 field">
+                                    <textarea rows="7" name="message" class="input-block-level" placeholder="會議備註內容..." data-rule="required"></textarea>
+                                    <div class="validation">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <button type="button" class="navbar-toggle aligncenter" data-toggle="collapse" data-target=".navbar-collapse">
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                    <a class="navbar-brand align-right" href="行事曆觀看.html"><span>N</span>ext<span> S</span>tep</a>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 新增會議列表 end -->
+        
+    </div>
+
+    <!--////////////////////////////////////////////////////////////-->
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.fancybox.pack.js"></script>
+    <script src="js/jquery.fancybox-media.js"></script>
+    <script src="js/google-code-prettify/prettify.js"></script>
+    <script src="js/portfolio/jquery.quicksand.js"></script>
+    <script src="js/portfolio/setting.js"></script>
+    <script src="js/jquery.flexslider.js"></script>
+    <script src="js/animate.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/validate.js"></script>
+
+</body>
+</html>

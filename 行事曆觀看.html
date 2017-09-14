@@ -1,0 +1,224 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/fancybox/jquery.fancybox.css" rel="stylesheet" />
+    <link href="css/flexslider.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="skins/default.css" rel="stylesheet" />
+    <link href="css/fullcalendar.min.css" rel="stylesheet" />
+    <link href="css/fullcalendar.print.min.css" rel="stylesheet" media='print' />
+
+
+</head>
+
+
+<body>
+    <div id="wrapper">
+        <!-- start header -->
+        <header>
+            <div class="navbar navbar-default navbar-static-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="首頁.html"><span>i</span>Minutes</a>
+                    </div>
+                    <div class="navbar-collapse collapse ">
+                        <ul class="nav navbar-nav">
+                            <li><a href="首頁.html"><h4>首頁</h4></a></li>
+
+                            <!--下拉式選單-->
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle; active" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="true"><h4>會議相關</h4></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="新增會議.html"><h4>新增會議</h4></a></li>
+                                    <li class="active"><a href="行事曆觀看.html"><h4>行程管理</h4></a></li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="組織列表.html"><h4>組織相關</h4></a>
+                            </li>
+
+                            <li>
+                                <a href="問題中心.html"><h4>Q&A</h4></a>
+                            </li>
+                        </ul>
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <a>welcome! Mark</a>
+                            </li>
+                            <li>
+                                <input type="image" src="img/avatar.png" class="img-circle" />
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- end header -->
+        <!-- 所在頁面標示 -->
+        <section id="inner-headline">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <ul class="breadcrumb">
+                            <li><a href="index.html"><i class="fa fa-home"></i></a><i class="icon-angle-right"></i></li>
+                            <li class="active"><i class="fa fa-clock-o">行程管理</i></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 所在頁面標示 -->
+
+
+        <section id="content">
+            <div class="container">
+                <div class="row">
+                    
+                    <div class="col-lg-8">
+                        <!-- 行事曆 目前取系統時間 -->
+                        <div id="calendar"></div>
+                        <!-- 行事曆 -->
+                    </div>
+
+                    <div class="col-lg-3">
+                        <label class="h3">會議列表</label><br />
+                        <label class="label-warning">點擊以加入會議</label>
+                        <hr />
+                        <!--ASP撈現有群組地點-->
+                        <div class="list-group">
+                            <a href="會議頁面.html" class="list-group-item active">
+                                會議列表
+                            </a>
+                            <a href="會議頁面.html" class="list-group-item">
+                                <h4 class="list-group-item-heading">每月例會</h4>
+                                <p class="list-group-item-text">2017-09-01</p>
+                            </a>
+                            <a href="會議頁面.html" class="list-group-item">
+                                <h4 class="list-group-item-heading">每月例會</h4>
+                                <p class="list-group-item-text">2017-10-01</p>
+                            </a>
+                            <a href="會議頁面.html" class="list-group-item">
+                                <h4 class="list-group-item-heading">每月例會</h4>
+                                <p class="list-group-item-text">2017-11-01</p>
+                            </a>
+                            <a href="會議頁面.html" class="list-group-item">
+                                <h4 class="list-group-item-heading">每月例會</h4>
+                                <p class="list-group-item-text">2017-12-01</p>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    
+    <!--////////////////////////////////////////////////////////////-->
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.fancybox.pack.js"></script>
+    <script src="js/jquery.fancybox-media.js"></script>
+    <script src="js/google-code-prettify/prettify.js"></script>
+    <script src="js/portfolio/jquery.quicksand.js"></script>
+    <script src="js/portfolio/setting.js"></script>
+    <script src="js/jquery.flexslider.js"></script>
+    <script src="js/animate.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/validate.js"></script>
+
+    
+    <script src="js/moment.min.js"></script>
+    <script src="js/fullcalendar.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script>
+    $(document).ready(function() {
+    var date = new Date();
+    var day = date.getDate();
+    var month = date.getMonth();
+    var year = date.getYear();
+	    $('#calendar').fullCalendar({
+		    //排列更動
+		    header:{
+			    left:'prev,next today',
+			    center:'title',
+			    right:'month,agendaWeek,agendaDay'
+		    },
+
+		    buttonText: {	//格式改為中文
+			    today:'今天',
+			    month:'月',
+			    week:'週',
+			    day:'日',
+		    },
+		    allDayText:'全天',
+		    monthNames:['一月','二月','三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月'],
+		    monthNamesShort:['1','2','3','4','5','6','7','8','9','10','11','12'],
+		    dayNames:['星期日','星期一','星期二','星期三','星期四','星期五','星期六'],
+		    dayNamesShort:['週日','週一','週二','週三','週四','週五','週六'],
+
+		    editable:true,//日期拖曳
+
+
+		    events:[{//事件
+		        title: '9月例會',
+      		    start: '2017-09-01T13:00:00',
+      		    end: '2017-09-01T17:00:00',
+      		    url: '會議頁面.html'
+		    },
+            {
+                title: '10月例會',
+                start: '2017-10-01T13:00:00',
+                end: '2017-10-01T17:00:00',
+                url: '會議頁面.html'
+            },
+            {
+                title: '11月例會',
+                start: '2017-11-01T13:00:00',
+                end: '2017-11-01T17:00:00',
+                url: '會議頁面.html'
+            },
+            {
+                title: '12月例會',
+                start: '2017-12-01T13:00:00',
+                end: '2017-12-01T17:00:00',
+                url: '會議頁面.html'
+            },
+            {
+                title: '今日',
+                start: moment().add().format(),
+
+            }
+		    ],
+
+		    dayClick: function(date, event, view) {
+    		    console.log('add event');
+    		    console.log(date);
+    		    console.log(event);
+    		    console.log(view);
+  		    },
+  		    eventClick: function(date, event, view) {
+    		    console.log('modify event');
+    		    console.log(date);
+    		    console.log(event);
+    		    console.log(view);
+  		    }
+	    });
+    });
+    
+
+    </script>
+</body>
+</html>

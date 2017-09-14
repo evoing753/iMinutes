@@ -1,0 +1,196 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>iMinutes - 組織</title>
+	
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/fancybox/jquery.fancybox.css" rel="stylesheet" />
+    <link href="css/flexslider.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="skins/default.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div id="wrapper">
+        <!-- start header -->
+        <header>
+            <div class="navbar navbar-default navbar-static-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="首頁.html"><span>i</span>Minutes</a>
+                    </div>
+                    <div class="navbar-collapse collapse ">
+                        <ul class="nav navbar-nav">
+                            <li><a href="首頁.html"><h4>首頁</h4></a></li>
+
+                            <!--下拉式選單-->
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle; active" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="true"><h4>會議相關</h4></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="新增會議.html"><h4>新增會議</h4></a></li>
+                                    <li><a href="行事曆觀看.html"><h4>行程管理</h4></a></li>
+                                </ul>
+                            </li>
+
+                            <li class="active">
+                                <a href="組織列表.html"><h4>組織相關</h4></a>
+                            </li>
+
+                            <li>
+                                <a href="問題中心.html"><h4>Q&A</h4></a>
+                            </li>
+                        </ul>
+
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <a>welcome! Mark</a>
+                            </li>
+                            <li>
+                                <input type="image" src="img/avatar.png" class="img-circle" />
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- end header -->
+        <!-- 所在頁面標示 -->
+        <section id="inner-headline">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <ul class="breadcrumb">
+                            <li><a href="index.html"><i class="fa fa-home"></i></a><i class="icon-angle-right"></i></li>
+                            <li class="active"><i class="fa fa-group">組織相關</i></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 所在頁面標示 -->
+        <!-- 組織列表功能 start -->
+        <section id="content">
+            <div class="tab-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <label class="h3">群組搜尋</label>
+                            <div class="input-group custom-search-form">
+                                <input type="text" class="form-control" placeholder="Search...">
+                                <span class="input-group">
+                                    <span>
+                                        <button class="btn btn-blue" type="button">
+                                            <i class="glyphicon glyphicon-search"> 搜尋群組 </i>
+                                        </button>
+                                    </span>
+                                    <span>
+                                        <button class="btn btn-blue" type="button">
+                                            <i class="glyphicon glyphicon-plus"> 建立群組 </i>
+                                        </button>
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <label class="label-warning">
+                                <strong>如有操作上之疑問，請前往<a href="問題中心.html">Q&A</a>中查詢!</strong><br />
+                            </label>
+                        </div>                    
+                    </div>
+
+                    <hr />
+
+                    <!-- 帶入使用者所屬群組才顯示? -->
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <label class="h3">群組場地相關</label>
+                            <hr />
+                            <!--ASP撈現有群組地點-->
+                            <div class="list-group">
+                                <a class="list-group-item active">
+                                    群組場地列表
+                                </a>
+                                <a class="list-group-item">
+                                    <h4 class="list-group-item-heading">會議室A</h4>
+                                    <p class="list-group-item-text">A棟11樓</p>
+                                </a>
+                                <a class="list-group-item">
+                                    <h4 class="list-group-item-heading">會議室B</h4>
+                                    <p class="list-group-item-text">B棟4樓</p>
+                                </a>
+                                <a class="list-group-item">
+                                    <h4 class="list-group-item-heading">會議室C</h4>
+                                    <p class="list-group-item-text">C棟2樓</p>
+                                </a>
+                                <a class="list-group-item">
+                                    <h4 class="list-group-item-heading">會議室D</h4>
+                                    <p class="list-group-item-text">D棟8樓</p>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <label class="h3">群組成員相關</label>
+                            <hr />
+                            <!--ASP撈現有群組成員-->
+                            <div class="list-group">
+                                <a class="list-group-item active">
+                                    群組成員列表
+                                </a>
+                                <a class="list-group-item h4">
+                                    Admin
+                                </a>
+                                <a class="list-group-item h4">
+                                    Sandy Chen
+                                </a>
+                                <a class="list-group-item h4">
+                                    Carry Luo
+                                </a>
+                                <a class="list-group-item h4">
+                                    Andy Wang
+                                </a>
+                                <a class="list-group-item h4">
+                                    Jin Wang
+                                </a>
+                                <a class="list-group-item h4">
+                                    May Wang
+                                </a>
+                                <a class="list-group-item h4">
+                                    Mark Wang
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 組織列表功能 end -->
+        
+    </div>
+
+
+
+
+    
+    <!--////////////////////////////////////////////////////////////-->
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.fancybox.pack.js"></script>
+    <script src="js/jquery.fancybox-media.js"></script>
+    <script src="js/google-code-prettify/prettify.js"></script>
+    <script src="js/portfolio/jquery.quicksand.js"></script>
+    <script src="js/portfolio/setting.js"></script>
+    <script src="js/jquery.flexslider.js"></script>
+    <script src="js/animate.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/validate.js"></script>
+
+</body>
+</html>

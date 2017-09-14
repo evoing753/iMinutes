@@ -1,0 +1,220 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>即時訊息會議</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/fancybox/jquery.fancybox.css" rel="stylesheet" />
+    <link href="css/flexslider.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="skins/default.css" rel="stylesheet" />
+
+
+</head>
+<body>
+    <div id="wrapper">
+        <!-- header start -->
+        <header>
+            <div class="navbar navbar-default navbar-static-top">
+                <div class="container">
+
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="首頁.html"><span>i</span>Minutes</a>
+                    </div>
+
+
+                    <!-- 右上功能列表 start -->
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <a href="首頁.html"><h4>首頁</h4></a>
+                            </li>
+
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="true"><h4>會議相關</h4></a>
+                                <ul class="dropdown-menu">
+                                    <li class="active"><a href="新增會議.html"><h4>新增會議</h4></a></li>
+                                    <li><a href="行事曆觀看.html"><h4>行程管理</h4></a></li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="組織列表.html"><h4>組織相關</h4></a>
+                            </li>
+
+                            <li>
+                                <a href="問題中心.html"><h4>Q&A</h4></a>
+                            </li>
+
+                        </ul>
+
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <a>welcome! Mark</a>
+                            </li>
+                            <li>
+                                <input type="image" src="../img/avatar.png" class="img-circle" />
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- 右上功能列表 end -->
+                </div>
+            </div>
+        </header>
+        <!-- header end -->
+        <!-- 所在位置 start -->
+        <section id="inner-headline">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <ul class="breadcrumb">
+                            <li><a href="index.html"><i class="fa fa-home"></i></a><i class="icon-angle-right"></i></li>
+                            <li class="active">即時訊息會議</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 所在位置 end -->
+        <!-- 即時訊息 start -->
+        <section id="content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8" style="max-height:500px;min-height:500px;overflow:scroll">
+                                <div class="panel panel-success">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">即時訊息</h3>
+                                    </div>
+                                    <!-- 訊息畫面 -->
+                                    <div class="panel-body" id="scrolldIV">
+                                    </div>
+                                    <!-- 訊息畫面 -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8">
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">說點什麼</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="input-group custom-search-form">
+                                            <input id="textValue" type="text" class="form-control" placeholder="輸入文字...">
+                                            <span class="input-group">
+                                                <span class="input-group">
+                                                    <input type="button" class="btn btn-blue" value="送出" onclick="add();" />
+                                                </span>
+                                            </span>
+                                        </div>
+                                        <input type="button" class="btn btn-dark pull-right" value="開啟會議記錄" onclick="location.href='會議記錄.html'" /> 
+                                        <input type="button" class="btn btn-danger pull-right" value="開啟視訊會議" onclick="location.href='視訊畫面.html'" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8">
+                                <div class="panel panel-success" style="max-height:500px;min-height:500px">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">會議成員列表</h3>
+                                    </div>
+                                    <div class="panel-body" style="min-height:500px;max-height:500px; overflow:auto">
+                                        <a class="list-group-item h4">
+                                            Admin
+                                        </a>
+                                        <a class="list-group-item h4">
+                                            Sandy Chen
+                                        </a>
+                                        <a class="list-group-item h4">
+                                            Carry Luo
+                                        </a>
+                                        <a class="list-group-item h4">
+                                            Andy Wang
+                                        </a>
+                                        <a class="list-group-item h4">
+                                            Jin Wang
+                                        </a>
+                                        <a class="list-group-item h4">
+                                            May Wang
+                                        </a>
+                                        <a class="list-group-item h4">
+                                            Mark Wang
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            
+        </section>
+        <!-- 即時訊息 end -->
+    </div>
+
+    <!--////////////////////////////////////////////////////////////-->
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.fancybox.pack.js"></script>
+    <script src="js/jquery.fancybox-media.js"></script>
+    <script src="js/google-code-prettify/prettify.js"></script>
+    <script src="js/portfolio/jquery.quicksand.js"></script>
+    <script src="js/portfolio/setting.js"></script>
+    <script src="js/jquery.flexslider.js"></script>
+    <script src="js/animate.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/validate.js"></script>
+
+
+    <script type="text/javascript">
+
+function add()
+{
+	var now = new Date();
+
+	var div = document.getElementById('scrolldIV');
+
+	var text = document.getElementById('textValue');
+
+	div.innerHTML = div.innerHTML + '<strong>Mark</strong> :' + text.value + '<br/>' + '傳送時間- ' + now.getMinutes() + '分 ' + now.getSeconds() + '秒' + '<br />';
+
+	div.scrollTop = div.scrollHeight;
+
+    
+}
+
+function scrollWindow()
+{
+    var div = document.getElementById('scrolldIV');
+    div.scrollTop(0, 100000);
+	setTimeout('scrollWindow()', 200);
+}
+
+window.onload = function () {
+    scrollWindow();
+}
+
+
+
+    </script>
+
+</body>
+</html>

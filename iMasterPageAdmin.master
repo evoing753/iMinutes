@@ -1,0 +1,151 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="iMasterPageAdmin.master.cs" Inherits="Administrator_MasterPageAdmin" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .MainColor {
+            background-color: #FFFAF0;
+        }
+
+        .Header {
+            width: 100%;
+            height: 100px;
+            text-align: center;
+            line-height: 90px;
+        }
+
+        .Sidebar {
+            width: 350px;
+            height: 475px;
+            float: left;
+            text-align: left;
+            margin: 10px;
+        }
+
+        .Body {
+            width: 1350px;
+            height: 475px;
+            text-align: left;
+            float: left;
+            background-color: #FFFAF0;
+        }
+
+        .auto-style2 {
+            text-decoration: none;
+            font-size: x-large;
+            margin: 5px;
+            font-family:'微軟正黑體';
+            font:bolder;
+        }
+
+        .auto-style4 {
+            text-decoration: none;
+            font-size: 48px;
+            font-family: 微軟正黑體;
+            text-align: center;
+            width: 1500px;
+        }
+    </style>
+
+    
+    
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/metisMenu.min.css" rel="stylesheet" />
+    <link href="css/sb-admin-2.min.css" rel="stylesheet" />
+    <link href="css/morris.css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+
+</head>
+<body class="MainColor">
+    <form id="form1" runat="server">
+        <div id="wrapper">
+
+            <!-- 導覽列 start -->
+            <nav class="navbar navbar-form navbar-static-top" role="navigation">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    </button>
+                    <a class="navbar-brand navbar-header"><label class="auto-style4">iMIUNTES後臺管理</label></a>
+                </div>
+                <!-- 導覽列 end -->
+
+
+                <!-- 訊息下拉列 start -->
+                <ul class="nav navbar-top-links navbar-right">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="fa fa-user fa-fw"></i><i class="fa fa-caret-down"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-user">                      
+                            <li>
+                                <asp:HyperLink ID="HyperLink7" runat="server" CssClass="fa fa-sign-out fa-fw" NavigateUrl="~/AdminLogout.aspx">登出</asp:HyperLink>
+                                
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- 訊息下拉列 end -->
+
+                <!-- 左側儀錶板 start -->
+                <div class="sidebar" role="navigation" style="width:200px" >
+                    <div class="sidebar-nav">
+                        <ul class="nav navbar-btn" id="side-menu">
+                            <li>
+                                <asp:HyperLink ID="HyperLink1" runat="server" CssClass="auto-style2" NavigateUrl="~/Administrator/MemberList.aspx">會員資料</asp:HyperLink>
+                            </li>
+                            <li>
+                                <asp:HyperLink ID="HyperLink2" runat="server" CssClass="auto-style2" NavigateUrl="~/Administrator/MeetList.aspx">會議列表</asp:HyperLink>
+                            </li>
+                            <li>
+                                <asp:HyperLink ID="HyperLink4" runat="server" CssClass="auto-style2" NavigateUrl="~/Administrator/MeetMemberList.aspx">會議紀錄</asp:HyperLink>
+                            </li>
+                            <li>
+                                <asp:HyperLink ID="HyperLink3" runat="server" CssClass="auto-style2" NavigateUrl="~/Administrator/PlacesList.aspx">會議場所</asp:HyperLink>
+                            </li>
+                            <li>
+                                <asp:HyperLink ID="HyperLink6" runat="server" CssClass="auto-style2" NavigateUrl="~/Administrator/PlaceSchList.aspx">場所排程</asp:HyperLink>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /.sidebar-collapse -->
+                </div>
+                <!-- 左側儀錶板 end -->
+            </nav>
+
+            <div id="page-wrapper" style="background-color:darkgrey">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+                <!-- /.row -->
+
+
+            </div>
+            <!-- /#page-wrapper -->
+
+        </div>
+        <!-- /#wrapper -->
+    </form>
+
+    
+    <!--////////////////////////////////////////////////////////////-->
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/metisMenu.min.js"></script>
+    <script src="../js/raphael.min.js"></script>
+    <script src="../js/morris-data.js"></script>
+    <script src="../js/sb-admin-2.js"></script>
+
+
+</body>
+</html>

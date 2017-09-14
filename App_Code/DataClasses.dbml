@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="iMinutes" Class="DataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=app9503.c9zef2m2zlax.ap-northeast-1.rds.amazonaws.com;Initial Catalog=iMinutes;Persist Security Info=True;User ID=app9503" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="iMinutesConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.event" Member="event">
+    <Type Name="event">
+      <Column Name="event_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="event_start" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="event_end" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="event_meet" Member="meet" ThisKey="event_id" OtherKey="meet_id" Type="meet" Cardinality="One" />
+    </Type>
+  </Table>
+  <Table Name="dbo.users" Member="users">
+    <Type Name="users">
+      <Column Name="user_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="user_mail" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="user_pwd" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="user_pwd_change_status" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="user_name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="user_phone" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="isAdmin" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="personal_space" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="organization" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="users_meet_members" Member="meet_members" ThisKey="user_id" OtherKey="user_id" Type="meet_members" />
+      <Association Name="users_user_schedule" Member="user_schedule" ThisKey="user_id" OtherKey="user_id" Type="user_schedule" />
+    </Type>
+  </Table>
+  <Table Name="dbo.meet" Member="meet">
+    <Type Name="meet">
+      <Column Name="meet_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="meet_title" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="start_time" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="end_time" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="meet_place" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="numofmembers" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="meet_uploadfile" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="meet_recordfile" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="meet_chattext" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="meet_note" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="meet_code" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="convener" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="meet_meet_members" Member="meet_members" ThisKey="meet_id" OtherKey="meet_id" Type="meet_members" />
+      <Association Name="meet_place_schedule" Member="place_schedule" ThisKey="meet_id" OtherKey="meet_id" Type="place_schedule" />
+      <Association Name="meet_user_schedule" Member="user_schedule" ThisKey="meet_id" OtherKey="meet_id" Type="user_schedule" />
+      <Association Name="event_meet" Member="event" ThisKey="meet_id" OtherKey="event_id" Type="event" IsForeignKey="true" />
+      <Association Name="places_meet" Member="places" ThisKey="meet_place" OtherKey="place_id" Type="places" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.meet_members" Member="meet_members">
+    <Type Name="meet_members">
+      <Column Name="meet_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="user_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="meet_note" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="meet_meet_members" Member="meet" ThisKey="meet_id" OtherKey="meet_id" Type="meet" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="users_meet_members" Member="users" ThisKey="user_id" OtherKey="user_id" Type="users" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.messages" Member="messages">
+    <Type Name="messages">
+      <Column Name="mid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="message" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="meet_code" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="created_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="updated_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.place_schedule" Member="place_schedule">
+    <Type Name="place_schedule">
+      <Column Name="place_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="meet_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="start_time" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="end_time" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="meet_place_schedule" Member="meet" ThisKey="meet_id" OtherKey="meet_id" Type="meet" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="places_place_schedule" Member="places" ThisKey="place_id" OtherKey="place_id" Type="places" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.places" Member="places">
+    <Type Name="places">
+      <Column Name="place_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="place_name" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="place_location" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="place_capacity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="organization" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="places_meet" Member="meet" ThisKey="place_id" OtherKey="meet_place" Type="meet" />
+      <Association Name="places_place_schedule" Member="place_schedule" ThisKey="place_id" OtherKey="place_id" Type="place_schedule" />
+    </Type>
+  </Table>
+  <Table Name="dbo.user_schedule" Member="user_schedule">
+    <Type Name="user_schedule">
+      <Column Name="user_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="meet_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="start_time" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="end_time" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="meet_user_schedule" Member="meet" ThisKey="meet_id" OtherKey="meet_id" Type="meet" IsForeignKey="true" />
+      <Association Name="users_user_schedule" Member="users" ThisKey="user_id" OtherKey="user_id" Type="users" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
